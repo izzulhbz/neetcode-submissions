@@ -1,0 +1,12 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        count = defaultdict(int)
+        maxCount = 0
+        result = 0
+
+        for num in nums:
+            count[num] += 1
+            if maxCount < count[num]:
+                result = num
+                maxCount = count[num]
+        return result
